@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { KeyboardEvent, useEffect, useState } from "react";
 import moment from "moment";
 import MaskedInput from "react-text-mask";
 import { Button, Col, InputGroup, Jumbotron, Row } from "react-bootstrap";
@@ -43,6 +43,17 @@ const ListTimer: React.FC = () => {
       ? [/[+-]?/, /\d/, /\d/, ":", /[0-5]/, /[\d]/]
       : [/\d/, /\d/, ":", /[0-5]/, /[\d]/];
   }
+  function DownloadCSV() {
+    let csvContent =
+      "data:text/csv;charset=utf-8," + timeSum.map((e: string) => e + ",\n");
+    var encodedUri = encodeURI(csvContent);
+    window.open(encodedUri);
+  }
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === "Enter") {
+      handleAddTime();
+    }
+  };
   return (
     <Jumbotron>
       <InputGroup className="mb-3">
@@ -51,6 +62,7 @@ const ListTimer: React.FC = () => {
           onChange={(e) => {
             setAddValue(e.target.value);
           }}
+          onKeyDown={handleKeyDown}
           id={`add-input`}
           placeholder="11:11"
           value={addValue}
@@ -75,6 +87,7 @@ const ListTimer: React.FC = () => {
       {timeSum.length ? (
         timeSum.map((n, index) => (
           <ItemTimer
+            key={index}
             index={index}
             value={n}
             handleRemoveTimer={handleRemoveTime}
@@ -85,6 +98,7 @@ const ListTimer: React.FC = () => {
       ) : (
         <h4>Adicione um valor</h4>
       )}
+      {/* <Button onClick={() => DownloadCSV()}>Download</Button> */}
     </Jumbotron>
   );
 };

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React from "react";
+import { Container } from "react-bootstrap";
 import ListTimer from "./components/ListTimer";
 
 function App() {
