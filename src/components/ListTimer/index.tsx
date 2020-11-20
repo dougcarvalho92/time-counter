@@ -43,12 +43,7 @@ const ListTimer: React.FC = () => {
       ? [/[+-]?/, /\d/, /\d/, ":", /[0-5]/, /[\d]/]
       : [/\d/, /\d/, ":", /[0-5]/, /[\d]/];
   }
-  function DownloadCSV() {
-    let csvContent =
-      "data:text/csv;charset=utf-8," + timeSum.map((e: string) => e + ",\n");
-    var encodedUri = encodeURI(csvContent);
-    window.open(encodedUri);
-  }
+
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === "Enter") {
       handleAddTime();
@@ -98,7 +93,6 @@ const ListTimer: React.FC = () => {
       ) : (
         <h4>Adicione um valor</h4>
       )}
-      {/* <Button onClick={() => DownloadCSV()}>Download</Button> */}
     </Jumbotron>
   );
 };
