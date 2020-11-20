@@ -18,7 +18,7 @@ Essa é a lista dos desafios realizados até o momento
 - [x]  Remoção de item
 - [ ]  Download
 - [ ]  Animações
-- [x]  Layout agradável
+- []  Layout agradável
 - [ ]  Outro (Ainda a definir)
 
 <p align="center">Desenvolvido por Douglas Carvalho</p>
