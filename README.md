@@ -21,4 +21,9 @@ Essa é a lista dos desafios realizados até o momento
 - [ ]  Layout agradável
 - [ ]  Outro (Ainda a definir)
 
+## 🚀 Preview
+- https://timecounter.netlify.app/
+
 <p align="center">Desenvolvido por Douglas Carvalho</p>
+
+
