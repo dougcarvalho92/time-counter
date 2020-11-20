@@ -50,7 +50,13 @@ const ListTimer: React.FC = () => {
     }
   };
   return (
-    <Jumbotron>
+    <div>
+      <Row className="justify-content-md-center mb-3">
+        <Col>
+          <h1>{total}</h1>
+        </Col>
+      </Row>
+
       <InputGroup className="mb-3">
         <MaskedInput
           mask={mask}
@@ -73,27 +79,24 @@ const ListTimer: React.FC = () => {
           </Button>
         </InputGroup.Append>
       </InputGroup>
-      <Row className="justify-content-md-center">
-        <Col>
-          <h1>{total}</h1>
-        </Col>
-      </Row>
-      <hr />
-      {timeSum.length ? (
-        timeSum.map((n, index) => (
-          <ItemTimer
-            key={index}
-            index={index}
-            value={n}
-            handleRemoveTimer={handleRemoveTime}
-            handleSetTimeNumber={handleSetTimeNumber}
-            mask={{ mask: mask }}
-          />
-        ))
-      ) : (
-        <h4>Adicione um valor</h4>
-      )}
-    </Jumbotron>
+
+      <Jumbotron>
+        {timeSum.length ? (
+          timeSum.map((n, index) => (
+            <ItemTimer
+              key={index}
+              index={index}
+              value={n}
+              handleRemoveTimer={handleRemoveTime}
+              handleSetTimeNumber={handleSetTimeNumber}
+              mask={{ mask: mask }}
+            />
+          ))
+        ) : (
+          <span>Adicione um valor</span>
+        )}
+      </Jumbotron>
+    </div>
   );
 };
 

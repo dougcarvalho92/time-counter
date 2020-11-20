@@ -1,12 +1,17 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 import ListTimer from "./components/ListTimer";
 
 function App() {
   return (
-    <Container className="justify-content-center align-items-center">
-      <ListTimer />
-    </Container>
+    <>
+      <Navbar bg="light" className="justify-content-center">
+        <Navbar.Brand>Time Counter</Navbar.Brand>
+      </Navbar>
+      <Container className="justify-content-center align-items-center">
+        <ListTimer />
+      </Container>
+    </>
   );
 }
 
