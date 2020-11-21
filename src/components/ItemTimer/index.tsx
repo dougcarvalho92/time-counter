@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Col, InputGroup, Row } from "react-bootstrap";
 import MaskedInput, { MaskedInputProps } from "react-text-mask";
-
+import { FaMinus } from "react-icons/fa";
 // import { Container } from './styles';
 interface ItemProps {
   index: number;
@@ -18,9 +18,9 @@ const ItemTimer: React.FC<ItemProps> = ({
   mask,
 }) => {
   return (
-    <Row className="justify-content-md-center" key={index}>
+    <Row key={index}>
       <Col>
-        <InputGroup className="mb-3">
+        <InputGroup>
           <MaskedInput
             mask={mask.mask}
             onChange={(e) => {
@@ -39,7 +39,7 @@ const ItemTimer: React.FC<ItemProps> = ({
                 handleRemoveTimer(index);
               }}
             >
-              Remover
+              <FaMinus size={14}/>
             </Button>
           </InputGroup.Append>
         </InputGroup>

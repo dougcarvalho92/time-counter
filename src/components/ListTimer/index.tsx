@@ -1,9 +1,9 @@
 import React, { KeyboardEvent, useEffect, useState } from "react";
 import moment from "moment";
 import MaskedInput from "react-text-mask";
-import { Button, Col, InputGroup, Jumbotron, Row } from "react-bootstrap";
+import { Button, Card, Col, InputGroup, Row } from "react-bootstrap";
 import ItemTimer from "../ItemTimer";
-
+import { FaPlus } from "react-icons/fa";
 // import { Container } from './styles';
 
 const ListTimer: React.FC = () => {
@@ -75,12 +75,12 @@ const ListTimer: React.FC = () => {
             className="mb-3 block"
             onClick={handleAddTime}
           >
-            Adicionar
+            <FaPlus size={14} />
           </Button>
         </InputGroup.Append>
       </InputGroup>
 
-      <Jumbotron>
+      <Card>
         {timeSum.length ? (
           timeSum.map((n, index) => (
             <ItemTimer
@@ -95,7 +95,7 @@ const ListTimer: React.FC = () => {
         ) : (
           <span>Adicione um valor</span>
         )}
-      </Jumbotron>
+      </Card>
     </div>
   );
 };
